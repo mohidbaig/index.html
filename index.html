@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Queen</title>
+    <style>
+        /* General styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ffe6e6, #ffd1dc); /* Romantic gradient */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow-y: auto; /* Enable scrolling for the whole page */
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #ff6f61; /* Warm red */
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            font-size: 1.4rem;
+            padding: 12px 30px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #e55b50; /* Slightly darker red */
+            transform: scale(1.1);
+        }
+
+        .message-container {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.95); /* Soft white box */
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            max-height: 70vh; /* Limit height of message container */
+            overflow-y: auto; /* Enable scrolling for the message */
+            animation: fadeIn 1s ease-in-out;
+            z-index: 1;
+        }
+
+        .message {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Falling hearts effect */
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff6f61;
+            transform: rotate(45deg);
+            animation: fall 7s infinite ease-in-out;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff6f61;
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 10px;
+            top: 0;
+        }
+
+        /* Animating hearts */
+        @keyframes fall {
+            0% {
+                top: -10%;
+                opacity: 1;
+                transform: rotate(0deg);
+            }
+            100% {
+                top: 110%;
+                opacity: 0;
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Positioning hearts */
+        .heart:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+        .heart:nth-child(2) {
+            left: 30%;
+            animation-delay: 2s;
+        }
+        .heart:nth-child(3) {
+            left: 50%;
+            animation-delay: 4s;
+        }
+        .heart:nth-child(4) {
+            left: 70%;
+            animation-delay: 6s;
+        }
+        .heart:nth-child(5) {
+            left: 90%;
+            animation-delay: 8s;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Falling hearts -->
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+
+    <!-- Title -->
+    <h1>For My Queen</h1>
+
+    <!-- Button to reveal the message -->
+    <button onclick="showMessage()">Tap to Reveal</button>
+
+    <!-- Hidden message container -->
+    <div id="message-container" class="message-container">
+        <p class="message">
+            Before this year ends, I want to thank you for being the best part of my 2024. You brought so much joy, laughter, and meaning into my life, and I’ll always be grateful for your love, understanding, and support. You’ve been my biggest cheerleader, always standing by my side. You mean everything to me, and I cannot wait to be yours forever.<br><br>
+            Your presence has made my world brighter and calmer, helping me forget life’s worries and focus on what truly matters—US. I still remember the day we became close, and since then, nothing has been the same. It all just went uphill!<br><br>
+            Every memory with you feels special, and I know this bond we share will only grow stronger.<br><br>
+            As we step into 2025, I want you to know I’ll keep choosing you, without hesitation or doubt. I hope to be there with you, by your side on this next journey. I want to be with you throughout this next year and all the years which are about to come our way. You are my reason, my hope, and my dream. No matter what the future holds, every day with you feels like the greatest day of my life.<br><br>
+            I love you, my queen ♥️
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        Forever yours, with all my love ❤️
+    </footer>
+
+    <script>
+        function showMessage() {
+            const messageContainer = document.getElementById('message-container');
+            messageContainer.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
